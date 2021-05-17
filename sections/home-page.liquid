@@ -1,0 +1,137 @@
+{{ 'home-page.scss.css' | asset_url | stylesheet_tag }}
+<section class="About">
+  <div class="Section__container">
+    <div class="Main__header">
+      <h1>{{ section.settings.heading1 }}</h1>
+    </div>
+    <div class="row">
+      <div class="Main__content col-6">
+        <div class="Main__text">
+         {{ section.settings.paragraph1 }}
+        </div>
+      </div>
+      <div class="Main__image col-6">
+        <img src="{{ section.settings.image | img_url: '2048x' }}" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="Section__container">
+    <div class="row">
+      <div class="Main__image col-6">
+        <img src="{{ section.settings.image_2 | img_url: '2048x' }}" alt="" />
+      </div>
+      <div class="Main__content col-6">
+        <div class="Main__text">
+          {{ section.settings.paragraph2 }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Section__container">
+    <div class="Main__header">
+      <h1>{{ section.settings.heading2 }}</h1>
+    </div>
+    <div class="row">
+      <div class="Main__content col-6">
+        <div class="Main__text">
+          {{ section.settings.paragraph3 }}
+        </div>
+        <div class="Main__contact-btn">
+          <button class="btn-more__container">
+            <div class=btn-more__background>
+              <a href="/collections/all">Kontakt</a>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="Main__image col-6">
+        <img src="{{ section.settings.image_3 | img_url: '2048x' }}" alt="" />
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="Our-product">
+  <div class="Section__container Our-product__section-border">
+    <div class="Main__header">
+      <h1>NASZE PRODUKTY</h1>
+    </div>
+    <div class="Our-product__row row">
+      {% for product in collections.all.products %}
+        <div class="col-4">
+          {% include 'product-card-grid', max_height: 100, product: product, show_vendor: false %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="Our-product__button">
+      <button class="btn-more__container">
+        <div class=btn-more__background>
+          <a href="/collections/all">Zobacz więcej</a>
+        </div>
+      </button>
+    </div>
+
+  </div>
+</section>
+<section class="Instagram-gallery">
+  <div class="Section__container">
+    <div id="wc-instagram-feed" data-gallerytype="InstaProductFeed"  data-id="1509092011"></div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Strona głowna",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image3"
+    },
+    {
+      "type": "text",
+      "id": "heading1",
+      "label": "Nagłówek1"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph1",
+      "label": "Tekst1",
+      "default": "<p></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph2",
+      "label": "Tekst2",
+      "default": "<p></p>"
+    },
+    {
+      "type": "text",
+      "id": "heading2",
+      "label": "Nagłówek2"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph3",
+      "label": "Tekst3",
+      "default": "<p></p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Heading"
+    }
+  ]
+}
+{% endschema %} 

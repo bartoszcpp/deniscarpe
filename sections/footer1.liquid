@@ -1,0 +1,54 @@
+{{ 'footer.scss.css' | asset_url | stylesheet_tag }}
+<footer>
+    <div class=Section__container>
+        <div class="row">
+            <div class="col-4 Footer__nav">
+              {% include 'site-nav', linklist: section.settings.main_linklist %}
+            </div>
+            <div class="col-4 Footer__nav-collection">
+              {% include 'site-nav', linklist: section.settings.second_linklist %}
+            </div>
+            <div class="col-4 Footer__quick-contact">
+              <h3>Szybki kontakt</h3>
+              <p>tel.: +48 {{ section.settings.tel }}</p>
+              <p>e-mail: {{ section.settings.mail }}</p>
+            </div>
+            <div class="col-4">
+              <p>
+                &copy; sklep.pl 2021
+              </p>
+            </div> 
+            
+        </div>
+    </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "second_linklist",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "tel",
+      "label": "Telefon"
+    },
+     {
+      "type": "text",
+      "id": "mail",
+      "label": "e-mail"
+    }
+  ]
+}
+{% endschema %}
