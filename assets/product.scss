@@ -1,0 +1,115 @@
+@mixin small {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.Product {
+  .Section__container {
+    @include small {
+      margin-top: 0;
+    }
+  }
+
+  .col-6 {
+    padding: 20px;
+  }
+
+  .Product__container {
+    .Product__image {
+      @include small {
+        padding: 0;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .Product__banner {
+    background-color: var(--main-color);
+    padding: 30px 0;
+    margin: 50px 0 30px;
+
+    .Section__container {
+      margin-top: 0;
+    }
+
+    .Product__banner-content {
+      display: flex;
+      margin: auto;
+
+      .Product__flag {
+        margin: auto 20px;
+        width: 100px;
+        height: 70px;
+      }
+    }
+  }
+}
+
+.product-form__controls-group
+  .product-form__item
+  .shopify-payment-button__button {
+  background-color: white;
+  color: #000;
+  border-color: var(--main-color) 0;
+}
+
+.product-form__controls-group
+  .product-form__item
+  .shopify-payment-button__button:hover {
+  background-color: var(--main-color) !important;
+  color: #fff;
+}
+
+.product-carousel {
+  //height: 500px;
+
+  .carousel-cell {
+    width: 100%; /* full width */
+    //height: 200px;
+    /* center images in cells with flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-cell img {
+    display: block;
+    max-height: 100%;
+  }
+
+  .product-single__thumbnail-image {
+    max-width: 99%;
+    margin: auto;
+    display: block;
+  }
+}
+
+.product-carousel.is-fullscreen {
+  padding-top: 200px;
+}
+
+.thumbns-carousel {
+  .product-single__thumbnail-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel-cell {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 0 20px;
+    padding: 10px 0;
+    height: 80px;
+    overflow: hidden;
+    width: 100px;
+  }
+}
+
+/* .product-form__controls-group .product-form__item .product-form__cart-submit {
+  background-color: #510000;
+  color: #fff;
+  border-color: #510000;
+} */

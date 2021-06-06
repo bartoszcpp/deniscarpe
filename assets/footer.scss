@@ -5,8 +5,8 @@
 }
 
 footer {
-  background-color: #000;
-  border-top: 2px solid #8d00007d;
+  background-color: var(--main-color);
+  border-top: 2px solid #000;
   padding: 30px;
 
   .Footer__nav {
@@ -56,5 +56,9 @@ footer {
 
   .list--inline > li {
     display: block;
+  }
+
+  p {
+    color: #fff;
   }
 }

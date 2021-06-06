@@ -10,12 +10,12 @@
             </div>
             <div class="col-4 Footer__quick-contact">
               <h3>Szybki kontakt</h3>
-              <p>tel.: +48 {{ section.settings.tel }}</p>
-              <p>e-mail: {{ section.settings.mail }}</p>
+              <p>tel.: {{ shop.phone }}</p>
+              <p>e-mail: {{ shop.email }}</p>
             </div>
             <div class="col-4">
               <p>
-                &copy; sklep.pl 2021
+                &copy; {{shop.domain }} 2021
               </p>
             </div> 
             
@@ -39,16 +39,6 @@
       "label": "Menu",
       "default": "main-menu"
     },
-    {
-      "type": "text",
-      "id": "tel",
-      "label": "Telefon"
-    },
-     {
-      "type": "text",
-      "id": "mail",
-      "label": "e-mail"
-    }
   ]
 }
 {% endschema %}

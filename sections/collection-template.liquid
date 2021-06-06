@@ -137,11 +137,11 @@
         {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
       {% endcase %}
 
-      <ul class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+      <div class="grid grid--uniform{% if collection.products_count > 0 %} grid__view-items{% endif %}">
         {% for product in collection.products %}
-          <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+          <div class="grid__item col-3">
             {% include 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
-          </li>
+          </div>
         {% else %}
           {% comment %}
           Add default products to help with onboarding for collections/all only.
@@ -174,7 +174,7 @@
             {%- assign is_empty_collection = true -%}
           {% endif %}
         {% endfor %}
-      </ul>
+      </div>
     {% else %}
       <ul class="list-view-items">
         {% for product in collection.products %}

@@ -25,6 +25,7 @@
   .Header__desktop {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 
     @include small {
       justify-content: space-between;
@@ -45,7 +46,7 @@
   }
 
   .Header__navigation {
-    margin: 0 auto;
+    //margin: 0 auto;
     font-size: 16px;
     text-transform: uppercase;
 
@@ -55,8 +56,8 @@
   }
 
   .Section__container {
-    padding-left: 90px;
-    padding-right: 90px;
+    // padding-left: 90px;
+    // padding-right: 90px;
 
     @include small {
       padding-left: 0;
@@ -108,15 +109,23 @@
     }
   }
 
-  .site-nav__link--active .site-nav__label {
-    color: rgb(114, 114, 114);
-  }
+  // .site-nav__link--active .site-nav__label {
+  //   color: rgb(114, 114, 114);
+  // }
 
   .site-nav__label {
     color: #000;
 
-    &:hover {
-      text-decoration: underline;
-    }
+    // &:hover {
+    //   text-decoration: underline;
+    // }
   }
+
+  .site-header__logo-image {
+    display: grid;
+  }
+}
+
+.site-nav__link--button {
+  padding: 3px 0;
 }

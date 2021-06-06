@@ -24,6 +24,16 @@
   assign money_price = price | money
 -%}
 
+<div class="polish-product">
+  <div class="polish-flag">
+    <div class="white">
+    </div>
+    <div class="red">
+    </div>
+  </div>
+  <p>Polski produkt</p>
+</div>
+
 <dl class="price price--listing
   {%- if available == false %} price--sold-out {% endif -%}
   {%- if compare_at_price > price %} price--on-sale {% endif -%}

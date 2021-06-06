@@ -19,6 +19,7 @@
 
   <link rel="preload" href="{{ 'theme.css' | asset_url }}" as="style">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity-fullscreen@1/fullscreen.css">
   {% comment %} <link rel="preload" href="{{ 'hero.css' | asset_url }}" as="style"> {% endcomment %}
   {% comment %} {{'style/hero.css' | asset_url | stylesheet_tag}} {% endcomment %}
   <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
@@ -78,6 +79,7 @@
   </script>
 
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script src="https://unpkg.com/flickity-fullscreen@1/fullscreen.js"></script>
 
   <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="print" onload="this.media='all';onLoadStylesheet()">
 
